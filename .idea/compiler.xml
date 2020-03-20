@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="Web-Books" />
+        <module name="Eureka" />
+        <module name="Zuul" />
+        <module name="Service-Books" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Dependencies" target="1.8" />
+      <module name="Eureka" target="1.8" />
+      <module name="hello-spring-cloud-eureka" target="1.8" />
+      <module name="Service-Books" target="1.8" />
+      <module name="Web-Books" target="1.8" />
+      <module name="Zuul" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Eureka" options="-parameters" />
+      <module name="Service-Books" options="-parameters" />
+      <module name="Web-Books" options="-parameters" />
+      <module name="Zuul" options="-parameters" />
+      <module name="hello-spring-cloud-eureka" options="-parameters" />
+    </option>
+  </component>
+</project>

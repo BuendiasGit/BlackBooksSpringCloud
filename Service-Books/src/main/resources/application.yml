@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: Service-Books
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://118.178.122.64:3308/blackbooks?characterEncoding=utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+server:
+  port: 8762
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
