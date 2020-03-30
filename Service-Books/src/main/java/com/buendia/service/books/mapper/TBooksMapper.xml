@@ -7,6 +7,7 @@
       <arg column="b_name" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="b_type" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="b_author" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="b_comment" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="b_price" jdbcType="DECIMAL" javaType="java.lang.Long" />
       <arg column="b_img" jdbcType="VARCHAR" javaType="java.lang.String" />
       <arg column="create_person" jdbcType="VARCHAR" javaType="java.lang.String" />
@@ -16,11 +17,16 @@
     </constructor>
   </resultMap>
   <sql id="Base_Column_List" >
-    bid, b_name, b_type, b_author, b_price, b_img, create_person, update_person, create_date, 
+    bid, b_name, b_type, b_author,b_comment, b_price, b_img, create_person, update_person, create_date,
     update_date
   </sql>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from t_books
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from t_books
     where bid = #{bid,jdbcType=INTEGER}
@@ -30,13 +36,13 @@
     where bid = #{bid,jdbcType=INTEGER}
   </delete>
   <insert id="insert" parameterType="com.buendia.service.books.entity.TBooks" >
-    insert into t_books (bid, b_name, b_type, 
-      b_author, b_price, b_img, 
-      create_person, update_person, create_date, 
+    insert into t_books (bid, b_name, b_type,
+      b_author, b_price, b_img,
+      create_person, update_person, create_date,
       update_date)
-    values (#{bid,jdbcType=INTEGER}, #{bName,jdbcType=VARCHAR}, #{bType,jdbcType=VARCHAR}, 
-      #{bAuthor,jdbcType=VARCHAR}, #{bPrice,jdbcType=DECIMAL}, #{bImg,jdbcType=VARCHAR}, 
-      #{createPerson,jdbcType=VARCHAR}, #{updatePerson,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP}, 
+    values (#{bid,jdbcType=INTEGER}, #{bName,jdbcType=VARCHAR}, #{bType,jdbcType=VARCHAR},
+      #{bAuthor,jdbcType=VARCHAR}, #{bPrice,jdbcType=DECIMAL}, #{bImg,jdbcType=VARCHAR},
+      #{createPerson,jdbcType=VARCHAR}, #{updatePerson,jdbcType=VARCHAR}, #{createDate,jdbcType=TIMESTAMP},
       #{updateDate,jdbcType=TIMESTAMP})
   </insert>
   <insert id="insertSelective" parameterType="com.buendia.service.books.entity.TBooks" >

@@ -1,4 +1,4 @@
-package com.buendia.service.books.entity;
+package com.buendia.web.books.entity;
 
 import java.io.Serializable;
 import java.util.Date;

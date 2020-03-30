@@ -2,6 +2,8 @@ package com.buendia.service.books.mapper;
 
 import com.buendia.service.books.entity.TBooks;
 
+import java.util.List;
+
 public interface TBooksMapper {
     int deleteByPrimaryKey(Integer bid);
 
@@ -10,6 +12,8 @@ public interface TBooksMapper {
     int insertSelective(TBooks record);
 
     TBooks selectByPrimaryKey(Integer bid);
+
+    List<TBooks> selectAll();
 
     int updateByPrimaryKeySelective(TBooks record);
 

@@ -1,0 +1,5 @@
+# Project exclude paths
+/Eureka/target/
+/Service-Books/target/
+/Web-Books/target/
+/Zuul/target/
